@@ -2,7 +2,7 @@
 #include <assert.h>
 
 __global__ reverseArray(int *array, int *arraytr){
-	  int inOffset  = blockDim.x * blockIdx.x;
+    int inOffset  = blockDim.x * blockIdx.x;
     int outOffset = blockDim.x * (gridDim.x - 1 - blockIdx.x);
     int in  = inOffset + threadIdx.x;
     int out = outOffset + (blockDim.x - 1 - threadIdx.x);
